@@ -10,12 +10,17 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"
         android:layout_width="match_parent"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph"
+    />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/nav_view"
         android:background="@color/colorPrimary"
         app:itemTextColor="@android:color/white"
         app:itemIconTint="@android:color/white"
