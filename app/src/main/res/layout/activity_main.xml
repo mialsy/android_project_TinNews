@@ -7,20 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-   <androidx.fragment.app.FragmentContainerView
-       android:id="@+id/nav_host_fragment"
-       android:layout_width="match_parent"
-       android:layout_weight="1"
-       android:layout_height="0dp" />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        app:menu="@menu/bottom_nav_menu"
         app:itemTextColor="@android:color/white"
-        app:itemIconTint="@android:color/white"/>
-
-
+        app:itemIconTint="@android:color/white"
+        app:menu="@menu/bottom_nav_menu"/>
 
 </LinearLayout>
