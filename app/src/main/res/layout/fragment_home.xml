@@ -1,44 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:clipChildren="false"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.home.HomeFragment">
+    android:layout_height="match_parent">
 
-    <com.yuyakaido.android.cardstackview.CardStackView
-        android:id="@+id/home_card_stack_view"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        <com.yuyakaido.android.cardstackview.CardStackView
+            android:clipChildren="false"
+            android:id="@+id/home_card_stack_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/home_button_container"
+            />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:clipChildren="false"
+        android:id="@+id/home_button_container"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_width="0dp"
         android:layout_marginBottom="24dp"
-        android:orientation="horizontal">
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
             android:id="@+id/home_unlike_button"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:layout_marginEnd="32dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:padding="6dp"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_thumb_down_24dp"
-            android:tint="#FF5D57" />
+            android:tint="#FF5D57"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/home_like_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <ImageButton
             android:id="@+id/home_like_button"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:layout_marginStart="32dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:padding="6dp"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_thumb_up_24dp"
-            android:tint="#00A76F" />
-    </LinearLayout>
-</LinearLayout>
+            android:tint="#00A76F"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/home_unlike_button"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
