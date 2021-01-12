@@ -13,8 +13,6 @@ import com.laioffer.tinnews.R;
 
 public class SaveFragment extends Fragment {
 
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
