@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.laioffer.tinnews.R;
 import com.laioffer.tinnews.databinding.SavedNewsItemBinding;
 import com.laioffer.tinnews.mode.Article;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +55,7 @@ public class SavedNewsAdapter extends RecyclerView.Adapter<SavedNewsAdapter.Save
         holder.descriptionTextView.setText(article.description);
         holder.favoriteIcon.setOnClickListener(v -> itemCallback.onRemoveFavorite(article));
         holder.itemView.setOnClickListener(v -> itemCallback.onOpenDetails(article));
+        Picasso.get().load(article.urlToImage).into(holder.imageView);
     }
 
     @Override
@@ -67,6 +69,7 @@ public class SavedNewsAdapter extends RecyclerView.Adapter<SavedNewsAdapter.Save
         TextView authorTextView;
         TextView descriptionTextView;
         ImageView favoriteIcon;
+        ImageView imageView;
 
         public SavedNewsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -74,6 +77,7 @@ public class SavedNewsAdapter extends RecyclerView.Adapter<SavedNewsAdapter.Save
             authorTextView = binding.savedItemAuthorContent;
             descriptionTextView = binding.savedItemDescriptionContent;
             favoriteIcon = binding.savedItemFavoriteImageView;
+            imageView = binding.savedItemThumbnail;
         }
     }
 

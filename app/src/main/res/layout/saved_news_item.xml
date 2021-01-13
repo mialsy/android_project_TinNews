@@ -45,6 +45,8 @@
             android:layout_height="wrap_content"
             android:gravity="start"
             android:layout_marginStart="2dp"
+            android:ellipsize="end"
+            android:maxLines="2"
             app:layout_constraintLeft_toRightOf="@+id/saved_item_author_title"
             app:layout_constraintRight_toLeftOf="@id/saved_item_favorite_image_view"
             app:layout_constraintTop_toBottomOf="@id/saved_item_thumbnail"
