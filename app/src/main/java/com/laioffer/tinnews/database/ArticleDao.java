@@ -6,7 +6,7 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
-import com.laioffer.tinnews.mode.Article;
+import com.laioffer.tinnews.model.Article;
 
 import java.util.List;
 

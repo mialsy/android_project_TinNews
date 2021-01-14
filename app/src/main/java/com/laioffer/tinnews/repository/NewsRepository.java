@@ -8,8 +8,8 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.laioffer.tinnews.TinNewsApplication;
 import com.laioffer.tinnews.database.TinNewsDatabase;
-import com.laioffer.tinnews.mode.Article;
-import com.laioffer.tinnews.mode.NewsResponse;
+import com.laioffer.tinnews.model.Article;
+import com.laioffer.tinnews.model.NewsResponse;
 import com.laioffer.tinnews.network.NewsApi;
 import com.laioffer.tinnews.network.RetrofitClient;
 

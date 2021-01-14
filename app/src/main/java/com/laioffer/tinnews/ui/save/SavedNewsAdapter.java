@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.laioffer.tinnews.R;
 import com.laioffer.tinnews.databinding.SavedNewsItemBinding;
-import com.laioffer.tinnews.mode.Article;
+import com.laioffer.tinnews.model.Article;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -81,5 +81,8 @@ public class SavedNewsAdapter extends RecyclerView.Adapter<SavedNewsAdapter.Save
         }
     }
 
+    public Article getArticleByPosition(int position) {
+        return articles.get(position);
+    }
 
 }

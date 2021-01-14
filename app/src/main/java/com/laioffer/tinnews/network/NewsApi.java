@@ -1,10 +1,9 @@
 package com.laioffer.tinnews.network;
 
-import com.laioffer.tinnews.mode.NewsResponse;
+import com.laioffer.tinnews.model.NewsResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface NewsApi {

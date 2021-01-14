@@ -3,11 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.save.SaveFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/news_saved_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        app:leftBgColor="@color/white"
+        app:leftImage="@drawable/ic_remove"
+        app:leftText=" "
+        app:rightBgColor="@color/white"
+        app:rightImage="@drawable/ic_remove"
+        app:textSize="20sp"
+        />
 
 </FrameLayout>

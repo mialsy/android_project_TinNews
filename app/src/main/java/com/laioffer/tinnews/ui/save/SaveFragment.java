@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.util.Log;
@@ -13,9 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.laioffer.tinnews.R;
 import com.laioffer.tinnews.databinding.FragmentSaveBinding;
-import com.laioffer.tinnews.mode.Article;
+import com.laioffer.tinnews.model.Article;
 import com.laioffer.tinnews.repository.NewsRepository;
 import com.laioffer.tinnews.repository.NewsViewModelFactory;
 
@@ -45,6 +45,7 @@ public class SaveFragment extends Fragment {
         binding.newsSavedRecyclerView.setAdapter(savedNewsAdapter);
         binding.newsSavedRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
 
+
         NewsRepository repository = new NewsRepository(getContext());
         viewModel = new ViewModelProvider(this, new NewsViewModelFactory(repository)).get(SaveViewModel.class);
         viewModel
@@ -61,8 +62,8 @@ public class SaveFragment extends Fragment {
         savedNewsAdapter.setItemCallback(new SavedNewsAdapter.ItemCallback() {
             @Override
             public void onOpenDetails(Article article) {
-                // TODO
-                Log.d("onOpenDetails", article.toString());
+                SaveFragmentDirections.ActionNavigationSaveToNavigationDetails direction = SaveFragmentDirections.actionNavigationSaveToNavigationDetails(article);
+                NavHostFragment.findNavController(SaveFragment.this).navigate(direction);
             }
 
             @Override
@@ -70,6 +71,20 @@ public class SaveFragment extends Fragment {
                 viewModel.deleteSavedArticle(article);
             }
         });
+
+//        binding.newsSavedRecyclerView.setListener(new SwipeLeftRightCallback.Listener() {
+//            @Override
+//            public void onSwipedLeft(int position) {
+//                viewModel.deleteSavedArticle(savedNewsAdapter.getArticleByPosition(position));
+//                savedNewsAdapter.notifyDataSetChanged();
+//            }
+//
+//            @Override
+//            public void onSwipedRight(int position) {
+//                viewModel.deleteSavedArticle(savedNewsAdapter.getArticleByPosition(position));
+//                savedNewsAdapter.notifyDataSetChanged();
+//            }
+//        });
 
     }
 

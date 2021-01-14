@@ -11,13 +11,23 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.laioffer.tinnews.R;
 import com.laioffer.tinnews.databinding.SearchNewsItemBinding;
-import com.laioffer.tinnews.mode.Article;
+import com.laioffer.tinnews.model.Article;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SearchNewsAdapter extends RecyclerView.Adapter<SearchNewsAdapter.SearchNewsViewHolder> {
+
+    interface ItemCallback {
+        void onOpenDetails(Article article);
+    }
+
+    private ItemCallback itemCallback;
+
+    public void setItemCallback(ItemCallback itemCallback) {
+        this.itemCallback = itemCallback;
+    }
 
     private List<Article> articles = new ArrayList<>();
 
@@ -43,7 +53,7 @@ public class SearchNewsAdapter extends RecyclerView.Adapter<SearchNewsAdapter.Se
         holder.favoriteImageView.setImageResource(R.drawable.ic_favorite_24dp);
         holder.itemTitleTextView.setText(article.title);
         Picasso.get().load(article.urlToImage).into(holder.itemImageView);
-
+        holder.itemView.setOnClickListener(v -> itemCallback.onOpenDetails(article));
     }
 
     @Override

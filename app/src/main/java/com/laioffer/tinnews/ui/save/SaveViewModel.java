@@ -3,7 +3,7 @@ package com.laioffer.tinnews.ui.save;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.laioffer.tinnews.mode.Article;
+import com.laioffer.tinnews.model.Article;
 import com.laioffer.tinnews.repository.NewsRepository;
 
 import java.util.List;

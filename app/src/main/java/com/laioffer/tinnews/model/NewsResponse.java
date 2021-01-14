@@ -1,4 +1,4 @@
-package com.laioffer.tinnews.mode;
+package com.laioffer.tinnews.model;
 
 import java.util.List;
 import java.util.Objects;

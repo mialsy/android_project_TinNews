@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.laioffer.tinnews.R;
 import com.laioffer.tinnews.databinding.SwipeNewsCardBinding;
-import com.laioffer.tinnews.mode.Article;
+import com.laioffer.tinnews.model.Article;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
